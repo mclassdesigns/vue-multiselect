@@ -520,7 +520,7 @@ fieldset[disabled] .multiselect {
 .multiselect__select:before {
   position: relative;
   right: 0;
-  top: 55%;
+  top: 20px;
   color: #999;
   margin-top: 4px;
   border-style: solid;
