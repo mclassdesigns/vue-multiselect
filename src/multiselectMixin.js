@@ -292,6 +292,10 @@ export default {
     preserveSearch: {
       type: Boolean,
       default: false
+    },
+    preserveLastSelected: {
+      type: Boolean,
+      default: true
     }
   },
   mounted () {
@@ -366,6 +370,13 @@ export default {
     },
     value (value) {
       this.internalValue = this.getInternalValue(value)
+    },
+    isOpen (newVal) {
+      // When menu opens keep the previously selected value in input.
+      if (this.preserveLastSelected && newVal === true && this.searchable && !this.multiple) {
+        const displayLabel = this.getOptionLabel(this.getValue())
+        this.search = displayLabel
+      }
     }
   },
   methods: {
@@ -487,7 +498,7 @@ export default {
       /* istanbul ignore else */
       if (this.max && this.multiple && this.internalValue.length === this.max) return
       /* istanbul ignore else */
-      if (key === 'Tab' && !this.pointerDirty) return
+      if (key === 'Tab' && this.search === '' && !this.pointerDirty) return
       if (option.isTag) {
         this.$emit('tag', option.label, this.id)
         this.search = ''
