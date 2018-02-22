@@ -136,7 +136,7 @@
        */
       selectLabel: {
         type: String,
-        default: 'Press enter to select'
+        default: ''
       },
       /**
        * String to show next to selected option
@@ -145,7 +145,7 @@
       */
       selectedLabel: {
         type: String,
-        default: 'Selected'
+        default: ''
       },
       /**
        * String to show when pointing to an alredy selected option
@@ -154,7 +154,7 @@
       */
       deselectLabel: {
         type: String,
-        default: 'Press enter to remove'
+        default: 'Press to remove'
       },
       /**
        * Decide whether to show pointer labels
@@ -376,8 +376,8 @@ fieldset[disabled] .multiselect {
 .multiselect--above.multiselect--active .multiselect__current,
 .multiselect--above.multiselect--active .multiselect__input,
 .multiselect--above.multiselect--active .multiselect__tags {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .multiselect__input,
@@ -434,7 +434,7 @@ fieldset[disabled] .multiselect {
   position: relative;
   display: inline-block;
   margin-left: -3px;
-  padding: 4px 26px 4px 10px;
+  padding: 4px 30px 4px 10px;
   border-radius: 5px;
   margin-right: 10px;
   color: #4a4a4a;
@@ -506,10 +506,10 @@ fieldset[disabled] .multiselect {
   position: absolute;
   box-sizing: border-box;
   width: 40px;
-  height: 38px;
+  height: 36px;
   right: 1px;
   top: 0;
-  padding: 4px 8px;
+  /*padding: 4px 8px;*/
   margin: 0;
   text-decoration: none;
   text-align: center;
@@ -543,7 +543,7 @@ fieldset[disabled] .multiselect {
 .multiselect__content-wrapper {
   position: absolute;
   display: block;
-  margin-top: 5px;
+  margin: 5px 0;
   background: #fff;
   width: 100%;
   max-height: 240px;
@@ -568,8 +568,8 @@ fieldset[disabled] .multiselect {
 
 .multiselect--above .multiselect__content-wrapper {
   bottom: 100%;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom: none;
@@ -620,7 +620,7 @@ fieldset[disabled] .multiselect {
 }
 
 .multiselect__option--selected {
-  background: #F3F3F3;
+  /*background: #F3F3F3;*/
   color: #35495E;
   font-weight: bold;
 }
@@ -650,7 +650,7 @@ fieldset[disabled] .multiselect {
 
 .multiselect--disabled .multiselect__current,
 .multiselect--disabled .multiselect__select {
-  background: #ededed;
+  /*background: #ededed;*/
   color: #a6a6a6;
 }
 

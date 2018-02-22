@@ -16,7 +16,7 @@ div
     template(slot="tag", slot-scope="props")
       span.custom__tag
         span {{ props.option.language }}
-        span.custom__remove(@click="props.remove(props.option)") ❌
+        span.custom__remove(@click="props.remove(props.option)")
   pre.language-json
     code.
       {{ value  }}
