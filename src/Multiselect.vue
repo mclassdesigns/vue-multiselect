@@ -101,7 +101,7 @@
             </template>
             <li v-show="showNoResults && (filteredOptions.length === 0 && search && !loading)">
               <span class="multiselect__option">
-                <slot name="noResult">No options found.</slot>
+                <slot name="noResult">No matches found.</slot>
               </span>
             </li>
             <slot name="afterList"></slot>
@@ -340,7 +340,7 @@ fieldset[disabled] .multiselect {
   display: block;
   position: relative;
   width: 100%;
-  min-height: 31px;
+  min-height: 36px;
   text-align: left;
   color: #424242;
 }
@@ -384,12 +384,12 @@ fieldset[disabled] .multiselect {
 .multiselect__single {
   position: relative;
   display: inline-block;
-  min-height: 20px;
-  line-height: 20px;
+  min-height: 22px;
+  line-height: 22px;
   border: none;
   border-radius: 5px;
   background: #fff;
-  padding: 0;
+  padding: 0 0 0 4px;
   width: calc(100%);
   transition: border 0.1s ease;
   box-sizing: border-box;
@@ -418,13 +418,13 @@ fieldset[disabled] .multiselect {
 }
 
 .multiselect__tags-wrap {
-  display: inline
+  display: inline;
 }
 
 .multiselect__tags {
   min-height: 36px;
   display: block;
-  padding: 7px 40px 0 10px;
+  padding: 6px 40px 6px 6px;
   border-radius: 5px;
   border: 1px solid #dbdbdb;
   background: #fff;
@@ -433,15 +433,13 @@ fieldset[disabled] .multiselect {
 .multiselect__tag {
   position: relative;
   display: inline-block;
-  margin-left: -3px;
-  padding: 4px 30px 4px 10px;
+  padding: 0 30px 0 10px;
   border-radius: 5px;
-  margin-right: 10px;
+  margin: 0 10px 0 0;
   color: #4a4a4a;
-  line-height: 1;
+  line-height: 22px;
   background: #f5f5f5;
   white-space: nowrap;
-  overflow: hidden;
   max-width: 100%;
   text-overflow: ellipsis;
 }
@@ -453,25 +451,22 @@ fieldset[disabled] .multiselect {
   position: absolute;
   right: 0;
   top: 0;
-  /*bottom: 0;*/
   font-weight: 700;
   font-style: initial;
   width: 20px;
   height: 100%;
-  padding: 3px 0 0 7px;
+  padding: 0 0 0 6px;
   text-align: left;
-  /*line-height: 1;*/
   transition: all 0.2s ease;
   background: rgba(10, 10, 10, 0.05);
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  /*border-radius: 290486px;*/
 }
 
 .multiselect__tag-icon:after {
   content: "×";
   color: #4a4a4a;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .multiselect__tag-icon:focus,
@@ -505,11 +500,10 @@ fieldset[disabled] .multiselect {
   display: block;
   position: absolute;
   box-sizing: border-box;
-  width: 40px;
+  width: 36px;
   height: 36px;
-  right: 1px;
+  right: 0;
   top: 0;
-  /*padding: 4px 8px;*/
   margin: 0;
   text-decoration: none;
   text-align: center;
@@ -540,13 +534,26 @@ fieldset[disabled] .multiselect {
   display: none;
 }
 
+::placeholder {
+    color: rgba(42, 42, 42, 0.3);
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: rgba(42, 42, 42, 0.3);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+   color: rgba(42, 42, 42, 0.3);
+}
+
 .multiselect__content-wrapper {
   position: absolute;
   display: block;
   margin: 5px 0;
   background: #fff;
   width: 100%;
-  max-height: 240px;
+  max-height: 242px;
   overflow: auto;
   border: 1px solid #dbdbdb;
   border-radius: 5px;
@@ -568,12 +575,6 @@ fieldset[disabled] .multiselect {
 
 .multiselect--above .multiselect__content-wrapper {
   bottom: 100%;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom: none;
-  border-top: 1px solid #E8E8E8;
 }
 
 .multiselect__content::webkit-scrollbar {
@@ -620,8 +621,6 @@ fieldset[disabled] .multiselect {
 }
 
 .multiselect__option--selected {
-  /*background: #F3F3F3;*/
-  color: #35495E;
   font-weight: bold;
 }
 
@@ -634,7 +633,6 @@ fieldset[disabled] .multiselect {
 
 .multiselect__option--selected.multiselect__option--highlight {
   background: #F3F3F3;
-  color: #35495E;
 }
 
 .multiselect__option--selected.multiselect__option--highlight:after {

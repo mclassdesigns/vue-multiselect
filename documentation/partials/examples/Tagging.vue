@@ -11,6 +11,7 @@ div
     :multiple="true",
     :taggable="true",
     @tag="addTag"
+    style="font-size: 12px;"
   )
   pre.language-json
     code.
@@ -50,4 +51,5 @@ export default {
 </script>
 
 <style lang="css">
+
 </style>
